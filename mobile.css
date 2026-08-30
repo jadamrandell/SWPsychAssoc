@@ -5,20 +5,20 @@
 /* GLOBAL MOBILE ADJUSTMENTS */
 @media (max-width: 600px) {
     body {
-        font-size: 0.95rem;
+        font-size: 0.95rem !important;
     }
 
     .main-inner {
-        width: 95%;
-        padding: 0 0.5rem;
+        width: 95% !important;
+        padding: 0 0.5rem !important;
     }
 
     .invited-title {
-        font-size: 1.8rem;
+        font-size: 1.8rem !important;
     }
 
     .decade-title {
-        font-size: 1.6rem;
+        font-size: 1.6rem !important;
     }
 }
 
@@ -26,49 +26,49 @@
    MOBILE NAVIGATION — HAMBURGER
    ================================ */
 
-/* Hide full nav, show hamburger */
 @media (max-width: 900px) {
 
     /* Hide left and right images */
     .nav-left,
     .nav-right {
-        display: none;
-    }
-
-    /* Hide nav-center links initially */
-    .nav-center {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: var(--swpa-light-desert);
-        padding: 1rem 0;
-        border-top: 2px solid var(--swpa-dark);
+        display: none !important;
     }
 
     /* Hamburger button */
     .mobile-nav-toggle {
-        display: block;
+        display: block !important;
         width: 100%;
         text-align: right;
-        padding: 0.5rem 1rem;
+        padding: 0.75rem 1rem;
         font-size: 2rem;
         font-weight: bold;
         cursor: pointer;
         color: var(--swpa-dark);
         background: var(--swpa-light-desert);
+        border-bottom: 2px solid var(--swpa-dark);
+    }
+
+    /* Hide nav-center links initially */
+    .nav-center {
+        display: none !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        background: var(--swpa-light-desert);
+        padding: 1rem 0 !important;
+        border-top: 2px solid var(--swpa-dark);
     }
 
     /* When active, show menu */
     .nav-center.mobile-open {
-        display: flex;
+        display: flex !important;
     }
 
     /* Style mobile links */
     .nav-center a {
-        font-size: 1rem;
-        padding: 0.75rem 0;
-        width: 100%;
-        text-align: center;
+        font-size: 1rem !important;
+        padding: 0.75rem 0 !important;
+        width: 100% !important;
+        text-align: center !important;
         border-bottom: 1px solid var(--swpa-dark);
     }
 }
@@ -79,12 +79,12 @@
 
 @media (max-width: 600px) {
     .hero-inner {
-        font-size: 1rem;
-        padding: 0.5rem;
+        font-size: 1rem !important;
+        padding: 0.5rem !important;
     }
 
     .hero-message {
-        padding: 0.5rem;
+        padding: 0.5rem !important;
     }
 }
 
@@ -94,8 +94,8 @@
 
 @media (max-width: 768px) {
     .content-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
     }
 }
 
@@ -105,21 +105,21 @@
 
 @media (max-width: 768px) {
     .convention-card {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.5rem !important;
     }
 
     .convention-card-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
     }
 
     .convention-thumb-column {
-        justify-content: center;
-        margin-bottom: 1rem;
+        justify-content: center !important;
+        margin-bottom: 1rem !important;
     }
 
     .convention-info-column h3 {
-        font-size: 1.3rem;
+        font-size: 1.3rem !important;
     }
 }
 
@@ -129,8 +129,8 @@
 
 @media (max-width: 600px) {
     .convention-thumb {
-        width: 120px;
-        height: 120px;
+        width: 120px !important;
+        height: 120px !important;
     }
 }
 
@@ -140,9 +140,9 @@
 
 @media (max-width: 700px) {
     .footer-inner {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 1rem !important;
     }
 }
 
@@ -152,19 +152,19 @@
 
 @media (max-width: 1100px) {
     .membership-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 }
 
 @media (max-width: 900px) {
     .membership-grid,
     .presentation-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
 }
 
 @media (max-width: 700px) {
     .membership-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
 }
