@@ -422,19 +422,106 @@ img {
 }
 
 /* =========================================================
-   12. RESPONSIVE BREAKPOINTS
+   12. RESPONSIVE BREAKPOINTS (Mobile & Tablet)
    ========================================================= */
-@media (max-width: 768px) {
-    .content-grid {
-        grid-template-columns: 1fr;
+
+/* --- LARGE TABLETS (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+    /* Prevent the fixed 400px nav sidebars from squishing the center links */
+    .nav-left, .nav-right {
+        flex: 1;
+        max-width: 250px;
+    }
+    
+    /* Scale down the 4-column presentation grid to 2 columns */
+    .presentation-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 700px) {
+/* --- TABLETS & MOBILE (max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* Use more screen width on smaller devices */
+    .main-inner, .hero-inner, .footer-inner {
+        width: 92%; 
+    }
+
+    /* Existing 2-column content grid fallback */
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Collapse the 3-column membership grid */
+    .membership-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Collapse the presentation grid completely */
+    .presentation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Stack the Navigation Bar vertically */
+    .swpa-nav {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .swpa-nav ul {
+        flex-wrap: wrap; 
+        padding: 0;
+    }
+    .nav-left, .nav-center, .nav-right {
+        flex: 1 1 auto;
+        justify-content: center;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Stack the Legacy Header */
+    .header-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    .logo-block {
+        align-items: center;
+    }
+
+    /* Scale down large typography */
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+    .invited-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* --- SMALL MOBILE PHONES (max-width: 600px) --- */
+@media (max-width: 600px) {
+    /* Fix Footer Layout */
     .footer-inner {
         flex-direction: column;
         text-align: center;
         align-items: center;
+        gap: 1.5rem;
+    }
+
+    /* Stack Convention Cards (Thumbnail above Text) */
+    .convention-card-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    /* Center the thumbnail image */
+    .convention-thumb-column {
+        margin: 0 auto 1rem auto;
+    }
+
+    /* Ensure large officer photos don't overflow */
+    .officer-photo-large {
+        width: 100%;
+        max-width: 250px;
     }
 }
 
