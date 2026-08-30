@@ -29,10 +29,11 @@
 @media (max-width: 900px) {
 
     /* Hide left and right images */
-    .nav-left,
-    .nav-right {
-        display: none !important;
-    }
+.nav-left,
+.nav-right {
+    display: none !important;
+    flex: 0 0 auto !important;
+}
 
     /* Hamburger button */
     .mobile-nav-toggle {
