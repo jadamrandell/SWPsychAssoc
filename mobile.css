@@ -28,35 +28,46 @@
 
 @media (max-width: 900px) {
 
-    /* Hide left and right images */
-.nav-left,
-.nav-right {
-    display: none !important;
-    flex: 0 0 auto !important;
-}
+    /* Force nav to stack vertically */
+    .swpa-nav {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100% !important;
+    }
+
+    /* Hide left and right images completely */
+    .nav-left,
+    .nav-right {
+        display: none !important;
+        flex: 0 0 auto !important;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+    }
 
     /* Hamburger button */
     .mobile-nav-toggle {
         display: block !important;
-        width: 100%;
-        text-align: right;
-        padding: 0.75rem 1rem;
-        font-size: 2rem;
-        font-weight: bold;
-        cursor: pointer;
-        color: var(--swpa-dark);
-        background: var(--swpa-light-desert);
-        border-bottom: 2px solid var(--swpa-dark);
+        width: 100% !important;
+        text-align: right !important;
+        padding: 0.75rem 1rem !important;
+        font-size: 2rem !important;
+        font-weight: bold !important;
+        cursor: pointer !important;
+        color: var(--swpa-dark) !important;
+        background: var(--swpa-light-desert) !important;
+        border-bottom: 2px solid var(--swpa-dark) !important;
     }
 
     /* Hide nav-center links initially */
     .nav-center {
         display: none !important;
         flex-direction: column !important;
+        align-items: center !important;
         width: 100% !important;
-        background: var(--swpa-light-desert);
+        background: var(--swpa-light-desert) !important;
         padding: 1rem 0 !important;
-        border-top: 2px solid var(--swpa-dark);
+        border-top: 2px solid var(--swpa-dark) !important;
     }
 
     /* When active, show menu */
@@ -70,7 +81,7 @@
         padding: 0.75rem 0 !important;
         width: 100% !important;
         text-align: center !important;
-        border-bottom: 1px solid var(--swpa-dark);
+        border-bottom: 1px solid var(--swpa-dark) !important;
     }
 }
 
