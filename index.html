@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Southwestern Psychological Association</title>
+    <link rel="stylesheet" href="swpa.css">
+    <link rel="stylesheet" href="mobile.css">
+
+</head>
+
+<body>
+
+<header class="swpa-header">
+
+    <!-- Top border -->
+    <!-- Logo banner -->
+    <div class="swpa-banner">
+    SOUTHWESTERN PSYCHOLOGICAL ASSOCIATION
+    </div>
+
+    <!-- Navigation bar -->
+    <nav class="swpa-nav">
+        <div class="nav-left">
+	<img src="ImagesThumbnails/revised_logo.png" alt="SWPA Logo">
+	</div>
+	<ul class ="nav-center">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ContactSWPA.html">Contact Us</a></li>
+            <li><a href="https://www.xcdsystem.com/swpsych/member/member_home.cfm">Login</a></li>
+            <li><a href="Membership.html">Membership</a></li>
+
+            <!-- Dropdown -->
+            <li class="dropdown">
+                <a href="#">Convention</a>
+                <ul class="dropdown-menu">
+                    <li><a href="Convention2027.html">Current Convention</a></li>
+                    <li><a href="PastConventions.html">Past Conventions</a></li>
+                </ul>
+            </li>
+
+            <li><a href="Newsletters.html">Newsletter</a></li>
+            <li><a href="SWPAFellows.html">Fellows</a></li>
+        </ul>
+	<div class="nav-right">
+        <img src="ImagesThumbnails/swpabannersketch.png" alt="Desert Sketch">
+    	</div>
+    </nav>
+
+</header>
+
+<section class="swpa-hero-banner">
+    <div class="hero-inner">
+        <div class="hero-message">Welcome to SWPA — Advancing Psychological Science Across the Southwest.</div>
+    </div>
+</section>
+
+<main class="main-content">
+
+    <div class="main-inner">
+    <div class="content-grid">
+
+        <!-- LEFT COLUMN -->
+        <section class="about-swpa">
+            <h2>About SWPA</h2>
+            <p>SWPA, the Southwestern Psychological Association, is the official APA affiliate for the Southwestern region of the United States.</p>
+
+            <h3>Mission</h3>
+            <p>SWPA works to promote and strengthen psychology’s scientific, professional and educational facets. At its annual meeting, SWPA offers paper, poster, continuing education sessions, workshops, symposia, and invited talks.</p>
+
+            <p>SWPA prides itself on serving the psychological community by providing access to scientific advances and professional development within a collegial atmosphere. Students are welcomed and treated as active and valued participants in the discipline.</p>
+
+            <h3>Regional States</h3>
+            <img src="ImagesThumbnails/swpastates.jpg" alt="SWPA Region Map" class="region-map">
+        </section>
+
+        <!-- RIGHT COLUMN -->
+        <section class="upcoming-events">
+            <h2>Upcoming Events</h2>
+
+            <div class="event-card">
+                <h3>SWPA 2027 Annual Convention</h3>
+                <p>Houston, TX · April 2–4, 2027</p>
+		<p><img src="ImagesThumbnails/SWPA2027ConfGraphic.jpg"></p>
+            </div>
+
+<div class="event-card">
+    <h3>Call for Submissions</h3>
+    <p>Opening Fall 2026</p>
+
+    <a class="btn warning btn-square" href="QuickInfo2027.html">
+        SWPA 2027 Quick Info
+    </a>
+</div>
+
+
+        </section>
+
+
+    </div>
+
+	<section class="affiliates">
+	    <h2 class="affiliates-title">AFFILIATES</h2>
+   		<div class="affiliates-inner">
+        		<img src="ImagesThumbnails/APALogo.png" alt="APA">
+			<img src="ImagesThumbnails/PsiChiLogo.png" alt="Psi Chi">
+        		<img src="ImagesThumbnails/SAMRLogo.png" alt="Society for Applied Multivariate Research">
+        		<img src="ImagesThumbnails/SCBNALogo.jpg" alt="Southwestern Comparative and Behavioral Neuroscience Association">
+        		<img src="ImagesThumbnails/SWTOPLogo.png" alt="Southwest Teachers of Psychology">
+    		</div>
+	</section>
+
+    </div>
+
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+
+        <div class="footer-left">
+            <p>
+                Southwestern Psychological Association<br>
+                100 North University Drive<br>
+                Edmond, OK 73034
+            </p>
+        </div>
+
+        <div class="footer-right">
+        <p>&copy; Southwestern Psychological Association<br>
+        Advancing psychological science across the Southwestern United States.<br>
+	<a href="mailto:jrandell4@uco.edu" target="_blank">Contact Webmaster</a></p>
+        </div>
+
+        <div class="social-icons">
+             <a href="https://www.facebook.com/SWPsychological" class="icon fb" aria-label="Facebook"></a>
+             <a href="https://instagram.com/YourPage" class="icon ig" aria-label="Instagram"></a>
+             <a href="https://x.com/YourPage" class="icon x" aria-label="X (Twitter)"></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const messages = [
+        "SWPA 2027 Convention Registration Opens October 1st!",
+        "Call for Submissions Opens Fall 2026.",
+        "Welcome to SWPA — Advancing Psychological Science Across the Southwest.",
+        "Students are valued participants in SWPA — Join us!",
+        "Your new message here",
+        "Another message here"
+    ];
+
+    let index = 0;
+    const messageElement = document.querySelector(".hero-message");
+
+    if (!messageElement) {
+        console.error("ERROR: .hero-message element not found.");
+        return;
+    }
+
+    function rotateMessage() {
+        index = (index + 1) % messages.length;
+        messageElement.textContent = messages[index];
+
+        messageElement.style.animation = "none";
+        void messageElement.offsetWidth;
+        messageElement.style.animation = "fadeIn 1s ease";
+    }
+
+    setInterval(rotateMessage, 5000);
+});
+</script>
+
+
+</body>
+</html>
