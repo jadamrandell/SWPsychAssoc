@@ -589,10 +589,10 @@ img {
 
 .btn-square {
     width: 100%;
-    display: block;
-    border-radius: 6px !important;
-    padding: 0.75rem 1.25rem;
+    max-width: 400px;
+    margin: 0 auto;
 }
+
 
 .btn.primary { background: var(--swpa-dark); color: #fff; }
 .btn.warning { background: #c96f2d; color: #fff; }
