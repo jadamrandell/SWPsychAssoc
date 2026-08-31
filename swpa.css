@@ -167,11 +167,7 @@ img {
 }
 
 /* =========================================================
-   5. BUTTONS (legacy + new) WAS DELETED
-   ========================================================= */
-
-/* =========================================================
-   6. CONFERENCE GRAPHIC
+   5. CONFERENCE GRAPHIC
    ========================================================= */
 .conference-graphic {
     margin: 2rem 0;
@@ -179,7 +175,7 @@ img {
 }
 
 /* =========================================================
-   7. FOOTER
+   6. FOOTER
    ========================================================= */
 .site-footer {
     background:  var(--swpa-dark);
@@ -189,7 +185,7 @@ img {
 }
 
 .footer-inner {
-    width: 70%;
+    width: 80%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -213,7 +209,7 @@ img {
 }
 
 /* =========================================================
-   8. LOGO BANNER
+   7. LOGO BANNER
    ========================================================= */
 .swpa-banner {
     text-align: center;
@@ -229,32 +225,99 @@ img {
 }
 
 /* =========================================================
-   9. NAVIGATION BAR
+   8. NAVIGATION BAR & HAMBURGER SYSTEM
    ========================================================= */
 .swpa-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: var(--swpa-light-desert);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.5rem;
 }
 
-.swpa-nav ul {
-    margin: 0;
-    padding: 0.5rem 1rem;
+/* Hide checkbox logic by default */
+.menu-toggle {
+    display: none;
+}
+
+/* Hide hamburger icon on desktop */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* CSS Hamburger lines */
+.hamburger-icon {
+    display: block;
+    position: relative;
+    width: 28px;
+    height: 3px;
+    background: var(--swpa-dark);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background: var(--swpa-dark);
+    border-radius: 2px;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger-icon::before { top: -8px; }
+.hamburger-icon::after { top: 8px; }
+
+/* Logo left */
+.nav-left {
+    flex: 0 0 300px;
+    display: flex;
+    align-items: center;
+}
+
+/* Nav center */
+.nav-center {
+    flex: 1;
     list-style: none;
     display: flex;
     gap: 1.5rem;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
-.swpa-nav a {
+.nav-center a {
     color: var(--swpa-dark);
     text-decoration: none;
-    font-size: .75rem;
+    font-size: 1rem;
     font-weight: 600;
-    padding: 0.4rem 0;
+    padding: 0.5rem 0;
+    display: block;
+}
+
+.nav-center a:hover {
+    color: var(--swpa-orange);
+}
+
+/* Logo right */
+.nav-right {
+    flex: 0 0 300px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-left img,
+.nav-right img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
 }
 
 /* Dropdown */
@@ -290,52 +353,8 @@ img {
     display: block !important;
 }
 
-/* Logo left */
-.nav-left {
-    flex: 0 0 400px;
-    display: flex;
-    align-items: center;
-}
-
-/* Nav center */
-.nav-center {
-    flex: 1;
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-center a {
-    color: var(--swpa-dark);
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.nav-center a:hover {
-    color: var(--swpa-orange);
-}
-
-/* Logo right */
-.nav-right {
-    flex: 0 0 400px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.nav-left img,
-.nav-right img {
-    width: 100%;
-    height: auto;
-}
-
 /* =========================================================
-   10. CONTENT GRID & HOMEPAGE COMPONENTS
+   9. CONTENT GRID & HOMEPAGE COMPONENTS
    ========================================================= */
 .content-grid {
     display: grid;
@@ -370,11 +389,7 @@ img {
     margin-bottom: 1rem;
 }
 
-.event-card h3 {
-    margin: 0 0 0.25rem;
-    color: #ffffff;
-}
-
+.event-card h3,
 .event-card p {
     margin: 0 0 0.25rem;
     color: #ffffff;
@@ -388,7 +403,7 @@ img {
 }
 
 /* =========================================================
-   11. AFFILIATES
+   10. AFFILIATES
    ========================================================= */
 .affiliates {
     width: 100%;
@@ -400,7 +415,6 @@ img {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 3rem;
@@ -422,137 +436,7 @@ img {
 }
 
 /* =========================================================
-   12. RESPONSIVE BREAKPOINTS (Mobile & Tablet)
-   ========================================================= */
-
-/* --- LARGE TABLETS (max-width: 1024px) --- */
-@media (max-width: 1024px) {
-    /* Prevent the fixed 400px nav sidebars from squishing the center links */
-    .nav-left, .nav-right {
-        flex: 1;
-        max-width: 250px;
-    }
-    
-    /* Scale down the 4-column presentation grid to 2 columns */
-    .presentation-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* --- TABLETS & MOBILE (max-width: 768px) --- */
-@media (max-width: 768px) {
-    /* Use more screen width on smaller devices */
-    .main-inner, .hero-inner, .footer-inner {
-        width: 92%; 
-    }
-
-    /* Existing 2-column content grid fallback */
-    .content-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Collapse the 3-column membership grid */
-    .membership-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    /* Collapse the presentation grid completely */
-    .presentation-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Stack the Navigation Bar vertically */
-    .swpa-nav {
-        flex-direction: column;
-        padding: 1rem;
-        gap: 1rem;
-    }
-    .swpa-nav ul {
-        flex-wrap: wrap; 
-        padding: 0;
-    }
-    .nav-left, .nav-center, .nav-right {
-        flex: 1 1 auto;
-        justify-content: center;
-        max-width: 100%;
-        width: 100%;
-    }
-
-    /* Stack the Legacy Header */
-    .header-inner {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-    .logo-block {
-        align-items: center;
-    }
-
-    /* Scale down large typography */
-    .hero h1 {
-        font-size: 1.6rem;
-    }
-    .invited-title {
-        font-size: 1.8rem;
-    }
-}
-
-/* --- SMALL MOBILE PHONES (max-width: 600px) --- */
-@media (max-width: 600px) {
-    /* Fix Footer Layout */
-    .footer-inner {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        gap: 1.5rem;
-    }
-
-    /* Stack Convention Cards (Thumbnail above Text) */
-    .convention-card-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    /* Center the thumbnail image */
-    .convention-thumb-column {
-        margin: 0 auto 1rem auto;
-    }
-
-    /* Ensure large officer photos don't overflow */
-    .officer-photo-large {
-        width: 100%;
-        max-width: 250px;
-    }
-}
-
-/* =========================================================
-   13. SOCIAL ICONS
-   ========================================================= */
-.social-icons {
-    display: flex;
-    gap: 1.2rem;
-}
-
-.icon {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.85;
-    transition: opacity 0.2s ease;
-}
-
-.icon:hover {
-    opacity: 1;
-}
-
-.icon.fb { background-image: url('ImagesThumbnails/FBLogo.png'); }
-.icon.ig { background-image: url('ImagesThumbnails/Insta.png'); }
-.icon.x  { background-image: url('ImagesThumbnails/XLogo.png'); }
-
-/* =========================================================
-   14. INVITED TITLES & OFFICERS
+   11. INVITED TITLES & OFFICERS
    ========================================================= */
 .invited-title {
     font-size: 2.4rem;
@@ -600,7 +484,7 @@ img {
 }
 
 /* =========================================================
-   15. CONVENTION CARDS
+   12. CONVENTION CARDS
    ========================================================= */
 .convention-card {
     background: var(--swpa-light-desert);
@@ -611,9 +495,11 @@ img {
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.convention-card h3 {
-    margin-top: 0.5rem;
-    color: var(--swpa-dark);
+.convention-card-inner {
+    display: grid;
+    grid-template-columns: 140px auto;
+    gap: 1rem;
+    align-items: center;
 }
 
 .convention-thumb {
@@ -623,13 +509,6 @@ img {
     border-radius: 6px;
     border: 2px solid var(--swpa-dark);
     margin-bottom: 0.75rem;
-}
-
-.convention-card-inner {
-    display: grid;
-    grid-template-columns: 140px auto;
-    gap: 1rem;
-    align-items: center;
 }
 
 .convention-thumb-column {
@@ -647,16 +526,6 @@ img {
     margin: 0.25rem 0;
 }
 
-/* Posters (2021–2026) */
-.convention-thumb {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 6px;
-    border: 2px solid var(--swpa-dark);
-}
-
-/* SWPA logo thumbnails */
 .convention-thumb[src*="swpa_logo"] {
     object-fit: contain;
     background: white;
@@ -664,13 +533,8 @@ img {
 }
 
 /* =========================================================
-   16. MEMBERSHIP SECTIONS & PRESENTATION GRID
+   13. MEMBERSHIP SECTIONS & PRESENTATION GRID
    ========================================================= */
-.btn-square {
-    border-radius: 6px !important;
-    padding: 0.75rem 1.25rem;
-}
-
 .membership-section {
     padding: 1rem;
     border-radius: 8px;
@@ -708,14 +572,8 @@ img {
     padding-left: 1.2rem;
 }
 
-.membership-section .btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-}
-
 /* =========================================================
-   17. BUTTON SYSTEM (NEW)
+   14. BUTTON SYSTEM
    ========================================================= */
 .btn {
     display: inline-block;
@@ -732,22 +590,13 @@ img {
 .btn-square {
     width: 100%;
     display: block;
+    border-radius: 6px !important;
+    padding: 0.75rem 1.25rem;
 }
 
-.btn.primary {
-    background: var(--swpa-dark);
-    color: #fff;
-}
-
-.btn.warning {
-    background: #c96f2d;
-    color: #fff;
-}
-
-.btn.accent {
-    background: #8b4f2f;
-    color: #fff;
-}
+.btn.primary { background: var(--swpa-dark); color: #fff; }
+.btn.warning { background: #c96f2d; color: #fff; }
+.btn.accent { background: #8b4f2f; color: #fff; }
 
 .btn:hover {
     transform: translateY(-3px);
@@ -757,4 +606,144 @@ img {
 .btn:active {
     transform: translateY(-1px);
     box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+} 
+
+.social-icons {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.icon {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.icon:hover { opacity: 1; }
+.icon.fb { background-image: url('ImagesThumbnails/FBLogo.png'); }
+.icon.ig { background-image: url('ImagesThumbnails/Insta.png'); }
+.icon.x  { background-image: url('ImagesThumbnails/XLogo.png'); }
+
+
+/* =========================================================
+   15. RESPONSIVE BREAKPOINTS (MOBILE & TABLET)
+   ========================================================= */
+
+/* --- TABLETS (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+    /* Scale down large grids */
+    .presentation-grid { grid-template-columns: repeat(2, 1fr); }
+    .membership-grid { grid-template-columns: repeat(2, 1fr); }
+    
+    /* Allow nav to flex more evenly on mid-sized screens */
+    .nav-left, .nav-right { flex: 1; max-width: 200px; }
+}
+
+/* --- MOBILE NAVIGATION BREAKPOINT (max-width: 900px) --- */
+@media (max-width: 900px) {
+    /* Enable Hamburger Menu */
+    .swpa-nav {
+        flex-wrap: wrap; 
+        position: relative;
+    }
+    .nav-left { flex: 1; max-width: none; }
+    .nav-right { display: none; } /* Hide secondary logo to save space on mobile */
+    .hamburger { display: block; order: 2; margin-left: auto; }
+    
+    /* Hide menu items by default on mobile */
+    .nav-center {
+        display: none;
+        width: 100%;
+        order: 3;
+        flex-direction: column;
+        background: var(--swpa-light-desert);
+        padding-top: 1rem;
+        margin-top: 1rem;
+        border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .nav-center a {
+        padding: 1rem;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Magic Checkbox logic to open menu */
+    .menu-toggle:checked ~ .nav-center {
+        display: flex;
+    }
+
+    /* Transform hamburger into an X */
+    .menu-toggle:checked + .hamburger .hamburger-icon {
+        background: transparent;
+    }
+    .menu-toggle:checked + .hamburger .hamburger-icon::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+    .menu-toggle:checked + .hamburger .hamburger-icon::after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+
+    /* Mobile Dropdown Fixes */
+    .dropdown-menu {
+        position: static !important;
+        display: block !important;
+        background: rgba(0,0,0,0.03);
+        border: none;
+        width: 100%;
+        box-shadow: none;
+        padding: 0;
+    }
+    .dropdown-menu li a {
+        color: var(--swpa-dark);
+    }
+}
+
+/* --- SMARTPHONES (max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* Expand content width */
+    .main-inner, .hero-inner, .footer-inner {
+        width: 92%; 
+    }
+
+    /* Collapse Grids to 1 Column */
+    .content-grid,
+    .membership-grid,
+    .presentation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Stack Footer Elements */
+    .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    /* Typography Scaling */
+    .hero h1 { font-size: 1.75rem; }
+    .invited-title { font-size: 1.8rem; }
+    
+    /* Convention Cards Stacking */
+    .convention-card-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .convention-thumb-column {
+        margin: 0 auto;
+    }
+    
+    /* Prevent image overflow */
+    .officer-photo-large {
+        width: 100%;
+        max-width: 250px;
+    }
 }
