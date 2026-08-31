@@ -273,12 +273,6 @@ img {
 .hamburger-icon::before { top: -8px; }
 .hamburger-icon::after { top: 8px; }
 
-/* Logo left */
-.nav-left {
-    flex: 0 0 300px;
-    display: flex;
-    align-items: center;
-}
 
 /* Nav center */
 .nav-center {
@@ -305,11 +299,13 @@ img {
     color: var(--swpa-orange);
 }
 
+/* Logo left */
 /* Logo right */
+.nav-left,
 .nav-right {
-    flex: 0 0 300px;
+    flex: 0 1 250px;     /* allow shrinking */
+    max-width: 250px;    /* keeps your design */
     display: flex;
-    justify-content: flex-end;
     align-items: center;
 }
 
